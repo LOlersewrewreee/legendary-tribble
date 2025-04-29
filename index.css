@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+    background: linear-gradient(rgba(64, 64, 64, 0.762), rgba(0, 0, 0, 0.827)), url('image.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.logo {
+    width: 5%;
+    height: 5%;
+}
+
+/* Navigation Bar Styling */
+.navigation-bar {
+    background-color: #000000;
+    padding: 10px 20px;
+}
+
+#navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navigation-container img {
+    margin-right: 15px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+li {
+    display: inline-block;
+    padding: 0 40px;
+}
+
+li:last-child {
+    margin-left: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-family: "Work Sans", sans-serif;
+    padding: 20px 40px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: stretch;
+}
+
+h1{
+    display: flex;
+    align-items: inherit;
+    color: #fff;
+    font-size: 15px;
+    justify-content: stretch;
+    font-family: "Work Sans", sans-serif; 
+}
+
+p{
+    color: #fff;
+    font-size: 12px;
+    font-family: "Work Sans", sans-serif; 
+    justify-content: stretch;
+}
+
+a:hover {
+    opacity: 1;
+    font-weight: bold;
+    color: #ffffff; /* Change this to your preferred active color */
+}
+
+.get-in-touch {
+    display: inline-flex;
+    align-items: center; /* Center align items vertically */
+}
+
+/* SVG Styling */
+.get-in-touch svg {
+    width: 15px;
+    height: 15px;
+    margin-left: 4px; /* Adjust space between text and SVG */
+    vertical-align: middle; /* Align SVG with text */
+}
+
+.navigation-bar ul li.active a {
+    color: #ffffff; /* Change this to your preferred active color */
+    text-decoration: underline; /* Optional: underline the active link */
+}
+
+.project-info {
+    background-color: #000000;
+    padding: 200px 10px;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 1000px;
+    justify-content: space-between;
+}
+
+/* Interactive Map */
+.interactive-map {
+    position: absolute; /* Use absolute positioning */
+    top: 100px; /* Adjust this to be just under the nav bar */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    margin: 10px; /* General margin for spacing */
+    padding: 1px;
+}
+
+/* Map SVG Settings */
+.map-svg {
+    position: absolute; /* Ensure positioning within the interactive map */
+    top: -190px; /* Position just below the nav bar */
+    left: -165px;
+    width: 70%; /* Full width */
+}
+
+svg {
+    display: flex;
+    justify-content: flex-start; /* Center the map */
+}
+
+.history-info {
+    background-color: #000000;
+    padding: 70px 10px;
+    float: right;
+    margin-top: -450px;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    margin-left: 500px;
+    justify-content: space-between;
+}
+
+.video{
+    background-color: #000000;
+    padding: 50px 10px;
+    float: left;
+    margin-top: 10px;
+    margin-bottom: -50px;
+    margin-right: 10px;
+    margin-left: 5px;
+    justify-content: space-between;
+}
