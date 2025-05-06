@@ -1,157 +1,237 @@
+
 body {
     margin: 0;
     padding: 0;
     font-family: "Work Sans", sans-serif;
     background: linear-gradient(rgba(64, 64, 64, 0.762), rgba(0, 0, 0, 0.827)), url('image.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .logo {
-    width: 5%;
-    height: 5%;
+    width: clamp(30px, 5vw, 50px);
+    height: auto;
 }
 
 /* Navigation Bar Styling */
 .navigation-bar {
     background-color: #000000;
-    padding: 10px 20px;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 #navigation-container {
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-#navigation-container img {
-    margin-right: 15px;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 ul {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    flex-grow: 1;
-    justify-content: center;
+    gap: 1rem;
 }
 
 li {
-    display: inline-block;
-    padding: 0 40px;
-}
-
-li:last-child {
-    margin-left: auto;
+    padding: 0.5rem;
 }
 
 a {
     text-decoration: none;
     color: #fff;
-    font-size: 15px;
-    font-family: "Work Sans", sans-serif;
-    padding: 20px 40px;
+    font-size: clamp(14px, 1.5vw, 16px);
+    padding: 0.5rem;
     opacity: 0.9;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
-    justify-content: stretch;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-h1{
-    display: flex;
-    align-items: inherit;
+h1 {
     color: #fff;
-    font-size: 15px;
-    justify-content: stretch;
-    font-family: "Work Sans", sans-serif; 
+    font-size: clamp(16px, 2vw, 24px);
+    margin: 0 0 1rem;
 }
 
-p{
+p {
     color: #fff;
-    font-size: 12px;
-    font-family: "Work Sans", sans-serif; 
-    justify-content: stretch;
+    font-size: clamp(12px, 1.2vw, 14px);
+    line-height: 1.6;
+    margin: 0 0 1rem;
 }
 
 a:hover {
     opacity: 1;
     font-weight: bold;
-    color: #ffffff; /* Change this to your preferred active color */
+    transform: translateY(-2px);
 }
 
-.get-in-touch {
-    display: inline-flex;
-    align-items: center; /* Center align items vertically */
-}
-
-/* SVG Styling */
 .get-in-touch svg {
     width: 15px;
     height: 15px;
-    margin-left: 4px; /* Adjust space between text and SVG */
-    vertical-align: middle; /* Align SVG with text */
 }
 
 .navigation-bar ul li.active a {
-    color: #ffffff; /* Change this to your preferred active color */
-    text-decoration: underline; /* Optional: underline the active link */
+    color: #ffffff;
+    text-decoration: underline;
 }
 
 .project-info {
-    background-color: #000000;
-    padding: 200px 10px;
-    float: right;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 1000px;
-    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    margin: 7rem 1rem 1rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin-left: auto;
 }
 
-/* Interactive Map */
 .interactive-map {
-    position: absolute; /* Use absolute positioning */
-    top: 100px; /* Adjust this to be just under the nav bar */
-    left: 0; /* Align to the left */
-    right: 0; /* Align to the right */
-    margin: 10px; /* General margin for spacing */
-    padding: 1px;
+    position: relative;
+    padding: 1rem;
+    margin-top: calc(3rem + -425px);
+    margin-left:calc(3rem + -75px);
 }
 
-/* Map SVG Settings */
-.map-svg {
-    position: absolute; /* Ensure positioning within the interactive map */
-    top: -190px; /* Position just below the nav bar */
-    left: -165px;
-    width: 70%; /* Full width */
+.map-container {
+    max-width: 100%;
+    overflow: hidden;
 }
 
-svg {
+.map {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+}
+
+.history-content {
     display: flex;
-    justify-content: flex-start; /* Center the map */
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 1rem;
+}
+
+.history-image {
+    max-width: auto;
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .history-info {
-    background-color: #000000;
-    padding: 70px 10px;
-    float: right;
-    margin-top: -450px;
-    margin-bottom: 1px;
-    margin-right: 1px;
-    margin-left: 500px;
-    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    flex: 1;
 }
 
-.video{
-    background-color: #000000;
-    padding: 50px 10px;
-    float: left;
-    margin-top: 10px;
-    margin-bottom: -50px;
-    margin-right: 10px;
-    margin-left: 5px;
-    justify-content: space-between;
+/* Map region hover effects */
+path[style*="fill:#e5ff80"] {
+    transition: fill 0.3s ease;
+}
+
+path[style*="fill:#e5ff80"]:hover {
+    fill: #f0ff99 !important;
+    filter: brightness(1.2);
+}
+
+path[style*="fill:#ffaaee"] {
+    transition: fill 0.3s ease;
+}
+
+path[style*="fill:#ffaaee"]:hover {
+    fill: #ffccf5 !important;
+    filter: brightness(1.2);
+}
+
+path[style*="fill:#c6e9af"] {
+    transition: fill 0.3s ease;
+}
+
+path[style*="fill:#c6e9af"]:hover {
+    fill:#c6e9af!important;
+    filter: brightness(1.2);
+}
+
+@media (max-width: 768px) {
+    .history-content {
+        flex-direction: column;
+    }
+    
+    .history-image {
+        max-width: 100%;
+    }
+}
+
+.video {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 8px;
+}
+
+.video iframe {
+    width: 100%;
+    max-width: 450px;
+    height: 400px;
+    border: none;
+}
+
+.resource-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.resource-links a {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.resource-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+@media (max-width: 768px) {
+    #navigation-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li:last-child {
+        margin: 0;
+    }
+
+    .project-info {
+        margin: 5rem 1rem 1rem;
+    }
+
+    .video iframe {
+        height: 300px;
+    }
 }
